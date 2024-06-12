@@ -1,10 +1,11 @@
 # pdf to text
-from pypdf import PdfReader
 import re
-from rich import print
+from typing import Tuple
+
+from pypdf import PdfReader
 
 
-def pdf_to_text(input_file: str) -> str:
+def pdf_to_text(input_file: str) -> Tuple[str, dict[str, str]]:
     """
     Extracts the text from a PDF file and returns it as a string.
 
@@ -34,9 +35,14 @@ def pdf_to_text(input_file: str) -> str:
         if value.startswith("-"):
             value = "-"
         attributes[key] = value
-    print(attributes)
-    return text
+
+    return text, attributes
 
 
 if __name__ == "__main__":
-    text = pdf_to_text("11099792_RELINT.pdf")
+    from rich import print
+
+    text, attributes = pdf_to_text("11099792_RELINT.pdf")
+
+    # print(text)
+    print(attributes)
