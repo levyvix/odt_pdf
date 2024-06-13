@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "odt-pdf"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["levyvix <levy.vix@gmail.com>"]
 readme = "README.md"
@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 ignr = "^2.2"
-pypdf = "^4.2.0"
+pypdf2 = "^3.0.1"
 
 
 [tool.poetry.group.dev.dependencies]

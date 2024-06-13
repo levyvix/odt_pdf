@@ -2,7 +2,7 @@
 import re
 from typing import Tuple
 
-from pypdf import PdfReader
+from PyPDF2 import PdfReader
 
 
 def pdf_to_text(input_file: str) -> Tuple[str, dict[str, str]]:
@@ -30,8 +30,7 @@ def pdf_to_text(input_file: str) -> Tuple[str, dict[str, str]]:
     attributes = {}
     for match in matches:
         key = match[1]
-        value = match[2].strip()  # Remove leading/trailing whitespaces
-        # If the value starts with "-", consider only the "-"
+        value = match[2].strip()
         if value.startswith("-"):
             value = "-"
         attributes[key] = value
